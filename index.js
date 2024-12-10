@@ -4,7 +4,7 @@ import cors from "cors";
 const port = 4000;
 
 const app = express();
-
+app.use(express.json());
 app.use(
   cors({
     origin: ["http://localhost:3000"],
@@ -18,11 +18,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/qr-image", (req, res) => {
-  const { message } = req.body;
-  if (!message) {
-    return res.status(400).send("Message is required!");
+  try {
+    const { message } = req.body;
+    if (!message) {
+      return res.status(400).send("Message is required!");
+    }
+    res.status(200).send(`Welcome! ✌️ ${message}`);
+  } catch (err) {
+    console.log(err);
   }
-  res.status(200).send(`Welcome! ✌️ ${message}`);
 });
 
 // Error handling middleware
