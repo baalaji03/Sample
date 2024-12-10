@@ -1,8 +1,15 @@
 import express from "express";
+import cors from "cors";
 
 const port = process.env.Port || 4000;
 
 const app = express();
+app.use(
+  cors({
+    origin: ["http://localhost:3000/"],
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.status(200).send(`hii`);
