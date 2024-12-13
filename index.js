@@ -16,10 +16,6 @@ const port = 4000;
   })
 );
 
-connectDB();
-app.get("/", (req, res) => {
-  res.status(200).send("Hi there!");
-});
 
 app.post("/qr-image", (req, res) => {
   try {
