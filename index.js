@@ -9,14 +9,7 @@ import connectDB from "./database/Config.js";
 dotenv.config();
 const port = 4000;
 
-const app = express();
-app.use(bodyParser.json());
-app.use(express.json());
 
-connectDB();
-app.get("/", (req, res) => {
-  res.status(200).send("Hi there! bujiii");
-});
 
 app.post("/qr-image", (req, res) => {
   try {
