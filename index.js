@@ -9,12 +9,6 @@ import connectDB from "./database/Config.js";
 dotenv.config();
 const port = 4000;
 
-  cors({
-    origin: ["http://localhost:3000"],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  })
-);
 
 
 app.post("/qr-image", (req, res) => {
@@ -54,4 +48,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
