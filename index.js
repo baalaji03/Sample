@@ -15,7 +15,7 @@ app.use(express.json());
 
 connectDB();
 app.get("/", (req, res) => {
-  res.status(200).send("Hi there!");
+  res.status(200).send("Hi there! bujiii");
 });
 
 app.post("/qr-image", (req, res) => {
