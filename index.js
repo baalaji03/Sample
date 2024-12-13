@@ -12,13 +12,6 @@ const port = 4000;
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["http://localhost:3000"],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  })
-);
 
 connectDB();
 app.get("/", (req, res) => {
@@ -62,4 +55,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
